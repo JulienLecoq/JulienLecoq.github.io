@@ -10,7 +10,7 @@ func generateStaticWebsite() {
 	err := app.GenerateStaticWebsite(".", &app.Handler{
 		Name:        "Ordre de passage",
 		Description: "",
-		Resources:   app.GitHubPages("JulienLecoq.github.io"),
+		Resources:   app.GitHubPages("passage-order"),
 		Scripts: []string{
 			"/web/main.js",
 		},

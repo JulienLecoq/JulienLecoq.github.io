@@ -5,7 +5,7 @@ var goappNav = function () {};
 var goappOnUpdate = function () {};
 var goappOnAppInstallChange = function () {};
 
-const goappEnv = {"GOAPP_INTERNAL_URLS":"null","GOAPP_ROOT_PREFIX":"/JulienLecoq.github.io","GOAPP_STATIC_RESOURCES_URL":"/JulienLecoq.github.io","GOAPP_VERSION":"2b03d78aeefb82d645e49c867c100fffc1270940"};
+const goappEnv = {"GOAPP_INTERNAL_URLS":"null","GOAPP_ROOT_PREFIX":"/passage-order","GOAPP_STATIC_RESOURCES_URL":"/passage-order","GOAPP_VERSION":"63b4b05858a6301f20a26aade4a7fa3382be23c7"};
 const goappLoadingLabel = "{progress}%";
 const goappWasmContentLengthHeader = "";
 
@@ -24,7 +24,7 @@ async function goappInitServiceWorker() {
   if ("serviceWorker" in navigator) {
     try {
       const registration = await navigator.serviceWorker.register(
-        "/JulienLecoq.github.io/app-worker.js"
+        "/passage-order/app-worker.js"
       );
 
       goappServiceWorkerRegistration = registration;
@@ -213,7 +213,7 @@ async function goappInitWebAssembly() {
 
     const go = new Go();
     const wasm = await instantiateStreaming(
-      fetchWithProgress("/JulienLecoq.github.io/web/app.wasm", showProgress),
+      fetchWithProgress("/passage-order/web/app.wasm", showProgress),
       go.importObject
     );
 
