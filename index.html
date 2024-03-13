@@ -7,18 +7,18 @@
 <meta name="keywords" content>
 <meta name="theme-color" content="#2d2c2c">
 <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover" name="viewport">
-<meta content="http://127.0.0.1:52449/" property="og:url">
+<meta property="og:url" content="http://127.0.0.1:52917/">
 <meta property="og:title" content>
 <meta property="og:description" content>
 <meta property="og:type" content="website">
 <meta property="og:image" content>
 <title></title>
 <link type="text/css" rel="preload" href="/JulienLecoq/app.css" as="style">
-<link type="text/css" rel="preload" href="/JulienLecoq/web/main.css" as="style">
-<link href="https://raw.githubusercontent.com/maxence-charriere/go-app/master/docs/web/icon.svg" rel="icon">
-<link rel="apple-touch-icon" href="https://raw.githubusercontent.com/maxence-charriere/go-app/master/docs/web/icon.png">
+<link href="/JulienLecoq/web/main.css" as="style" type="text/css" rel="preload">
+<link rel="icon" href="https://raw.githubusercontent.com/maxence-charriere/go-app/master/docs/web/icon.svg">
+<link href="https://raw.githubusercontent.com/maxence-charriere/go-app/master/docs/web/icon.png" rel="apple-touch-icon">
 <link rel="manifest" href="/JulienLecoq/manifest.webmanifest">
-<link type="text/css" href="/JulienLecoq/app.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/JulienLecoq/app.css">
 <link rel="stylesheet" type="text/css" href="/JulienLecoq/web/main.css">
 <script defer src="/JulienLecoq/wasm_exec.js"></script>
 <script defer src="/JulienLecoq/app.js"></script>
@@ -26,14 +26,101 @@
 </head>
 <body>
 <div style="padding:40px 50px 40px 50px;">
-<script src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" type="module"></script>
+<script src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<div style="display:none;"></div>
+<div style="font-size:3.8rem;margin:0 auto 30px auto;width:fit-content;color:#003366;">Génère ton ordre de passage</div>
 <h1 style="color:#0055A4;font-size:1.8rem;margin:30px 0 30px 0;">Paramètres de passage</h1>
-<div style="display:flex;flex-direction:column;gap:8px;"></div>
-<h1 style="color:#0055A4;font-size:1.8rem;margin:30px 0 30px 0;margin-bottom:30px;">Ordre de passage</h1>
+<div style="flex-direction:column;gap:8px;display:flex;">
+<div>
+<label for="group-select">Sélectionne un groupe : </label>
+<select id="group-select" name="group">
+<option value="0" selected>GB1</option>
+<option value="1" selected="false">GB2</option>
+<option selected="false" value="2">LK1</option>
+<option value="3" selected="false">LK2</option>
+</select>
 </div>
-<aside class="goapp-app-info" id="app-wasm-loader">
-<img class="goapp-logo goapp-spin" src="https://raw.githubusercontent.com/maxence-charriere/go-app/master/docs/web/icon.png" id="app-wasm-loader-icon">
-<p id="app-wasm-loader-label" class="goapp-label">0%</p>
+<div>
+<label for="date-picker">Sélectionne le début de l&#39;heure de passage : </label>
+<input name="date-picker" type="time" value="08:00" required id="date-picker">
+</div>
+<div>
+<label for="passage-duration">Sélectionne la durée d&#39;un passage : </label>
+<input id="passage-duration" name="passage-duration" type="number" value="12" min="1" required>
+</div>
+</div>
+<h1 style="color:#0055A4;font-size:1.8rem;margin:30px 0 30px 0;margin-bottom:30px;">Ordre de passage</h1>
+<table style="border-radius:10px;border-collapse:collapse;box-shadow:rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;overflow:hidden;">
+<tr>
+<th style="padding:17px 42px 17px 42px;text-align:left;color:white;background-color:rgb(112, 123, 211);font-size:1rem;">Nom</th>
+<th style="font-size:1rem;padding:17px 42px 17px 42px;text-align:left;color:white;background-color:rgb(112, 123, 211);">Heure de passage</th>
+<th style="padding:17px 42px 17px 42px;text-align:left;color:white;background-color:rgb(112, 123, 211);font-size:1rem;cursor:pointer;"><ion-icon name="ellipsis-horizontal"></ion-icon></th>
+</tr>
+<tr>
+<td style="padding:17px 42px 17px 42px;text-align:left;color:#303030;background-color:white;font-size:0.92rem;">CHAKER Nabil</td>
+<td style="font-size:0.92rem;padding:17px 42px 17px 42px;text-align:left;color:#303030;background-color:white;">08h00 - 08h12</td>
+<td style="padding:17px 42px 17px 42px;text-align:left;color:#303030;background-color:white;font-size:0.92rem;cursor:pointer;"><ion-icon name="ellipsis-horizontal"></ion-icon></td>
+</tr>
+<tr>
+<td style="color:#303030;background-color:rgb(248, 247, 254);font-size:0.92rem;padding:17px 42px 17px 42px;text-align:left;">HADDADI Ilyas</td>
+<td style="background-color:rgb(248, 247, 254);font-size:0.92rem;padding:17px 42px 17px 42px;text-align:left;color:#303030;">08h12 - 08h24</td>
+<td style="text-align:left;color:#303030;background-color:rgb(248, 247, 254);font-size:0.92rem;padding:17px 42px 17px 42px;cursor:pointer;"><ion-icon name="ellipsis-horizontal"></ion-icon></td>
+</tr>
+<tr>
+<td style="padding:17px 42px 17px 42px;text-align:left;color:#303030;background-color:white;font-size:0.92rem;">HIDOIN Mark</td>
+<td style="padding:17px 42px 17px 42px;text-align:left;color:#303030;background-color:white;font-size:0.92rem;">08h24 - 08h36</td>
+<td style="padding:17px 42px 17px 42px;text-align:left;color:#303030;background-color:white;font-size:0.92rem;cursor:pointer;"><ion-icon name="ellipsis-horizontal"></ion-icon></td>
+</tr>
+<tr>
+<td style="color:#303030;background-color:rgb(248, 247, 254);font-size:0.92rem;padding:17px 42px 17px 42px;text-align:left;">KHAOUI Mohamed-Smaïl</td>
+<td style="background-color:rgb(248, 247, 254);font-size:0.92rem;padding:17px 42px 17px 42px;text-align:left;color:#303030;">08h36 - 08h48</td>
+<td style="text-align:left;color:#303030;background-color:rgb(248, 247, 254);font-size:0.92rem;padding:17px 42px 17px 42px;cursor:pointer;"><ion-icon name="ellipsis-horizontal"></ion-icon></td>
+</tr>
+<tr>
+<td style="color:#303030;background-color:white;font-size:0.92rem;padding:17px 42px 17px 42px;text-align:left;">KOUBAA Mohamed</td>
+<td style="padding:17px 42px 17px 42px;text-align:left;color:#303030;background-color:white;font-size:0.92rem;">08h48 - 09h00</td>
+<td style="padding:17px 42px 17px 42px;text-align:left;color:#303030;background-color:white;font-size:0.92rem;cursor:pointer;"><ion-icon name="ellipsis-horizontal"></ion-icon></td>
+</tr>
+<tr>
+<td style="color:#303030;background-color:rgb(248, 247, 254);font-size:0.92rem;padding:17px 42px 17px 42px;text-align:left;">MADAD Hamza</td>
+<td style="background-color:rgb(248, 247, 254);font-size:0.92rem;padding:17px 42px 17px 42px;text-align:left;color:#303030;">09h00 - 09h12</td>
+<td style="background-color:rgb(248, 247, 254);font-size:0.92rem;padding:17px 42px 17px 42px;text-align:left;color:#303030;cursor:pointer;"><ion-icon name="ellipsis-horizontal"></ion-icon></td>
+</tr>
+<tr>
+<td style="padding:17px 42px 17px 42px;text-align:left;color:#303030;background-color:white;font-size:0.92rem;">MAIGNIEN Tom</td>
+<td style="font-size:0.92rem;padding:17px 42px 17px 42px;text-align:left;color:#303030;background-color:white;">09h12 - 09h24</td>
+<td style="padding:17px 42px 17px 42px;text-align:left;color:#303030;background-color:white;font-size:0.92rem;cursor:pointer;"><ion-icon name="ellipsis-horizontal"></ion-icon></td>
+</tr>
+<tr>
+<td style="color:#303030;background-color:rgb(248, 247, 254);font-size:0.92rem;padding:17px 42px 17px 42px;text-align:left;">MINGHI Jules</td>
+<td style="background-color:rgb(248, 247, 254);font-size:0.92rem;padding:17px 42px 17px 42px;text-align:left;color:#303030;">09h24 - 09h36</td>
+<td style="text-align:left;color:#303030;background-color:rgb(248, 247, 254);font-size:0.92rem;padding:17px 42px 17px 42px;cursor:pointer;"><ion-icon name="ellipsis-horizontal"></ion-icon></td>
+</tr>
+<tr>
+<td style="padding:17px 42px 17px 42px;text-align:left;color:#303030;background-color:white;font-size:0.92rem;">OZKAN Omer</td>
+<td style="padding:17px 42px 17px 42px;text-align:left;color:#303030;background-color:white;font-size:0.92rem;">09h36 - 09h48</td>
+<td style="padding:17px 42px 17px 42px;text-align:left;color:#303030;background-color:white;font-size:0.92rem;cursor:pointer;"><ion-icon name="ellipsis-horizontal"></ion-icon></td>
+</tr>
+<tr>
+<td style="background-color:rgb(248, 247, 254);font-size:0.92rem;padding:17px 42px 17px 42px;text-align:left;color:#303030;">RUFFINONI Noah</td>
+<td style="background-color:rgb(248, 247, 254);font-size:0.92rem;padding:17px 42px 17px 42px;text-align:left;color:#303030;">09h48 - 10h00</td>
+<td style="text-align:left;color:#303030;background-color:rgb(248, 247, 254);font-size:0.92rem;padding:17px 42px 17px 42px;cursor:pointer;"><ion-icon name="ellipsis-horizontal"></ion-icon></td>
+</tr>
+<tr>
+<td style="padding:17px 42px 17px 42px;text-align:left;color:#303030;background-color:white;font-size:0.92rem;">SOLIS MACEDO Paul</td>
+<td style="font-size:0.92rem;padding:17px 42px 17px 42px;text-align:left;color:#303030;background-color:white;">10h00 - 10h12</td>
+<td style="padding:17px 42px 17px 42px;text-align:left;color:#303030;background-color:white;font-size:0.92rem;cursor:pointer;"><ion-icon name="ellipsis-horizontal"></ion-icon></td>
+</tr>
+<tr>
+<td style="background-color:rgb(248, 247, 254);font-size:0.92rem;padding:17px 42px 17px 42px;text-align:left;color:#303030;">SULTANOVIC Elmedin</td>
+<td style="text-align:left;color:#303030;background-color:rgb(248, 247, 254);font-size:0.92rem;padding:17px 42px 17px 42px;">10h12 - 10h24</td>
+<td style="background-color:rgb(248, 247, 254);font-size:0.92rem;padding:17px 42px 17px 42px;text-align:left;color:#303030;cursor:pointer;"><ion-icon name="ellipsis-horizontal"></ion-icon></td>
+</tr>
+</table>
+</div>
+<aside id="app-wasm-loader" class="goapp-app-info">
+<img id="app-wasm-loader-icon" class="goapp-logo goapp-spin" src="https://raw.githubusercontent.com/maxence-charriere/go-app/master/docs/web/icon.png">
+<p class="goapp-label" id="app-wasm-loader-label">0%</p>
 </aside>
 </body>
 </html>

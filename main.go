@@ -10,6 +10,6 @@ func main() {
 	app.Route("/", &root.Root{})
 	app.RunWhenOnBrowser()
 
-	generateDynamicWebsite()
-	// generateStaticWebsite()
+	// generateDynamicWebsite()
+	generateStaticWebsite()
 }
