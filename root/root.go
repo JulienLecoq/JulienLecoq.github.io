@@ -30,7 +30,7 @@ type Root struct {
 	PassageOrderTable *passage_order_table.PassageOrderTable
 }
 
-func (r *Root) OnMount(ctx app.Context) {
+func (r *Root) OnInit() {
 	global.Popover = popoverComponent(r)
 
 	r.Title = titleComponent()
@@ -47,7 +47,8 @@ func (r *Root) OnMount(ctx app.Context) {
 
 func (r *Root) Render() app.UI {
 	return app.Div().Body(
-		app.Script().Type("module").Src("https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"),
+		// app.Script().Type("module").Src("https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"),
+		app.Script().Src("https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"),
 
 		r.Popover,
 		r.Title,

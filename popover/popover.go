@@ -35,7 +35,7 @@ type Popover struct {
 	styles              map[string]string
 }
 
-func (p *Popover) OnMount(ctx app.Context) {
+func (p *Popover) OnInit() {
 	app.Window().AddEventListener("click", func(ctx app.Context, e app.Event) {
 		if p.Visible && p.HideOnDocumentClick {
 			p.Hide()
