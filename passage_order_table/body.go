@@ -5,7 +5,7 @@ import (
 	"juliano.com/passage-order/global"
 	"juliano.com/passage-order/interval"
 	"juliano.com/passage-order/ionicon"
-	mapp "juliano.com/passage-order/map"
+	"juliano.com/passage-order/mapp"
 	"juliano.com/passage-order/user"
 )
 

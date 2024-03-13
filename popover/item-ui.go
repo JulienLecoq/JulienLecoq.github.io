@@ -2,7 +2,7 @@ package popover
 
 import (
 	"github.com/maxence-charriere/go-app/v9/pkg/app"
-	mapp "juliano.com/passage-order/map"
+	"juliano.com/passage-order/mapp"
 	"juliano.com/passage-order/theme"
 )
 

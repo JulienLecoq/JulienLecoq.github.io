@@ -4,7 +4,7 @@ import (
 	"github.com/maxence-charriere/go-app/v9/pkg/app"
 	"juliano.com/passage-order/global"
 	"juliano.com/passage-order/ionicon"
-	mapp "juliano.com/passage-order/map"
+	"juliano.com/passage-order/mapp"
 )
 
 var thStyle = mapp.Merge(cellStyle, map[string]string{

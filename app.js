@@ -5,7 +5,7 @@ var goappNav = function () {};
 var goappOnUpdate = function () {};
 var goappOnAppInstallChange = function () {};
 
-const goappEnv = {"GOAPP_INTERNAL_URLS":"null","GOAPP_ROOT_PREFIX":"/JulienLecoq","GOAPP_STATIC_RESOURCES_URL":"/JulienLecoq","GOAPP_VERSION":"c1d84214a3555867c30ceadee4eee839eb49a2e7"};
+const goappEnv = {"GOAPP_INTERNAL_URLS":"null","GOAPP_ROOT_PREFIX":"/JulienLecoq","GOAPP_STATIC_RESOURCES_URL":"/JulienLecoq","GOAPP_VERSION":"6b896cb81d9d2ab2bae79a0613db342aedab04f0"};
 const goappLoadingLabel = "{progress}%";
 const goappWasmContentLengthHeader = "";
 
