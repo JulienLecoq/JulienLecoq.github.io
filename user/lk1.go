@@ -62,3 +62,8 @@ var LK1Users = []User{
 		Email:     "yassine.tarrimi@edu.univ-fcomte.fr",
 	},
 }
+
+var LK1 = Group{
+	Name:  "LK1",
+	Users: LK1Users,
+}

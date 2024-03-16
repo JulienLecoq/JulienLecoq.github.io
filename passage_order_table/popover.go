@@ -65,7 +65,7 @@ func (p *PassageOrderTable) thClickItems() []popover.Item {
 	}
 }
 
-func (p *PassageOrderTable) tdClickItems(user *user.User, index int) []popover.Item {
+func (p *PassageOrderTable) tdClickItems(_ *user.User, index int) []popover.Item {
 	return []popover.Item{
 		popover.NewPopoverItem(
 			"Enlever",

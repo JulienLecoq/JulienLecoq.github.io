@@ -62,3 +62,8 @@ var LK2Users = []User{
 	// 	Email:     "",
 	// },
 }
+
+var LK2 = Group{
+	Name:  "LK2",
+	Users: LK2Users,
+}

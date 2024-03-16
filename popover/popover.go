@@ -82,3 +82,10 @@ func (p *Popover) Show(reference app.UI, items []Item) {
 	p.Visible = true
 	p.Update()
 }
+
+func NewPopover() *Popover {
+	return &Popover{
+		Visible:             false,
+		HideOnDocumentClick: true,
+	}
+}

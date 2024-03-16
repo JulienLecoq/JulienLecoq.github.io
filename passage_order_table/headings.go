@@ -5,28 +5,19 @@ import (
 	"juliano.com/passage-order/global"
 	"juliano.com/passage-order/ionicon"
 	"juliano.com/passage-order/mapp"
+	"juliano.com/passage-order/table"
 )
 
-var thStyle = mapp.Merge(cellStyle, map[string]string{
-	// "background-color": "#f2f2f2",
-	// "background-color": "#e0f2fe", // Previous value
-	// "background-color": "#bae6fd",
-	"background-color": "rgb(112, 123, 211)",
-	"color":            "white",
-	"font-size":        "1rem",
-})
-
 func (p *PassageOrderTable) headings() app.UI {
-	return app.Tr().Body(
-		app.Th().Text("Nom").Styles(thStyle),
-		app.Th().Text("Heure de passage").Styles(thStyle),
+	style := mapp.Merge(table.ThStyle, map[string]string{
+		"cursor": "pointer",
+	})
 
-		app.Th().Body(
-			&ionicon.Ionicon{
-				Name: "ellipsis-horizontal",
-			},
-		).Styles(thStyle).Style("cursor", "pointer").
-			OnClick(p.onThActionClick),
+	return app.Tr().Body(
+		app.Th().Text("Nom").Styles(table.ThStyle),
+		app.Th().Text("Heure de passage").Styles(table.ThStyle),
+
+		app.Th().Body(ionicon.Ellipsis()).Styles(style).OnClick(p.onThActionClick),
 	)
 }
 

@@ -8,10 +8,8 @@ import (
 //
 // ticker := ticker.NewTicker(2_000 * time.Millisecond)
 //
-//	ticker.OnTick(func() {
-//		button1Txt := fmt.Sprintf("%s %d", "Button", count)
-//		r.Button1.SetText(button1Txt)
-//	})
+// ticker.OnTick(func() {
+// })
 //
 // ticker.Start()
 type Ticker struct {
@@ -29,6 +27,7 @@ func (t *Ticker) Start() {
 	t.ticker = time.NewTicker(t.duration)
 }
 
+// Always call this after the start method has been called.
 func (t *Ticker) OnTick(cb func()) {
 	go func() {
 		for range t.ticker.C {

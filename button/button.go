@@ -16,11 +16,13 @@ func (b *Button) SetText(text string) {
 }
 
 func (b *Button) Render() app.UI {
+	style := map[string]string{
+		"border-radius":    "10px",
+		"background-color": "blue",
+	}
+
 	return app.
 		Button().
-		Body(
-			app.Text(b.Text),
-		).
-		Style("border-radius", "10px").
-		Style("background-color", "blue")
+		Text(b.Text).
+		Styles(style)
 }

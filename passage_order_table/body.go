@@ -5,13 +5,9 @@ import (
 	"juliano.com/passage-order/global"
 	"juliano.com/passage-order/interval"
 	"juliano.com/passage-order/ionicon"
-	"juliano.com/passage-order/mapp"
+	"juliano.com/passage-order/table"
 	"juliano.com/passage-order/user"
 )
-
-var oddTdStyle = mapp.Merge(cellStyle, map[string]string{
-	"background-color": "rgb(248, 247, 254)",
-})
 
 func (p *PassageOrderTable) body() []app.UI {
 	TRs := []app.UI{}
@@ -25,15 +21,11 @@ func (p *PassageOrderTable) body() []app.UI {
 	for index, user := range p.Group.Users {
 		passageTime := *planning.NextGeneratedInterval()
 
-		tdStyle := p.tdStyle(index)
+		tdStyle := table.TdStyle(index)
 
 		nameTd := app.Td().Text(user).Styles(tdStyle)
 		timeTd := app.Td().Text(passageTime).Styles(tdStyle)
-		actionTd := app.Td().Body(
-			&ionicon.Ionicon{
-				Name: "ellipsis-horizontal",
-			},
-		).Styles(tdStyle).Style("cursor", "pointer").
+		actionTd := app.Td().Body(ionicon.Ellipsis()).Styles(table.IconStyleFromStyle(tdStyle)).
 			OnClick(p.onTdActionClick(&user, index))
 
 		tr := app.Tr().Body(
@@ -46,14 +38,6 @@ func (p *PassageOrderTable) body() []app.UI {
 	}
 
 	return TRs
-}
-
-func (p *PassageOrderTable) tdStyle(index int) map[string]string {
-	if index%2 == 1 {
-		return oddTdStyle
-	}
-
-	return cellStyle
 }
 
 func (p *PassageOrderTable) onTdActionClick(user *user.User, index int) app.EventHandler {

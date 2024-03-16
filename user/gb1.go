@@ -62,3 +62,8 @@ var GB1Users = []User{
 		Email:     "elmedin.sultanovic@edu.univ-fcomte.fr",
 	},
 }
+
+var GB1 = Group{
+	Name:  "GB1",
+	Users: GB1Users,
+}

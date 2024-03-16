@@ -1,9 +1,8 @@
 package user
 
 import (
-	"sort"
-
 	"juliano.com/passage-order/slice"
+	"sort"
 )
 
 type Group struct {
@@ -42,26 +41,6 @@ func (g *Group) DeleteUser(index int) {
 
 func (g Group) String() string {
 	return g.Name
-}
-
-var LK1 = Group{
-	Name:  "LK1",
-	Users: LK1Users,
-}
-
-var LK2 = Group{
-	Name:  "LK2",
-	Users: LK2Users,
-}
-
-var GB1 = Group{
-	Name:  "GB1",
-	Users: GB1Users,
-}
-
-var GB2 = Group{
-	Name:  "GB2",
-	Users: GB2Users,
 }
 
 var Groups = []Group{

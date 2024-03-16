@@ -57,3 +57,8 @@ var GB2Users = []User{
 		Email:     "mame_diarra.wade@edu.univ-fcomte.fr",
 	},
 }
+
+var GB2 = Group{
+	Name:  "GB2",
+	Users: GB2Users,
+}

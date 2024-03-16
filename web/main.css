@@ -15,3 +15,34 @@ body {
 	/* background-color: #F8F8F8; */
 	cursor: pointer;
 }
+
+.nav-bar-item {
+	display:         block;
+	text-decoration: none;
+	color:           #ecf0f1;
+	font-size:       15px;
+	padding:         15px;
+	letter-spacing:  1px;
+	transition:      background-color 0.3s, color 0.3s;
+}
+
+.nav-bar-item:hover {
+	cursor: pointer;
+	color: #2c3e50;
+	background-color: #ecf0f1;
+}
+
+/* .nav-bar-item { */
+/* 	display:         block; */
+/* 	text-decoration: none; */
+/* 	color:           #ecf0f1; */
+/* 	font-size:       15px; */
+/* 	padding:         15px; */
+/* 	letter-spacing:  1px; */
+/* 	transition: border-bottom 0.3s, text-decoration-color 0.3s; */
+/* } */
+/*  */
+/* .nav-bar-item:hover { */
+/* 	cursor: pointer; */
+/* 	border-bottom: 2px solid #ecf0f1; */
+/* } */
